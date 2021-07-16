@@ -1,4 +1,3 @@
-
 exports.handler = async (event, context) => {
   const { key } = process.env;
   const querystring = require("querystring");
@@ -7,7 +6,6 @@ exports.handler = async (event, context) => {
   //const data = await shazam.search(params.search, key);
  // console.log('returned data ', data);
   return {
-    statusCode: 200,
-    param: params.search,
+    statusCode: 200
   };
 };
