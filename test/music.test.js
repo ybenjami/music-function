@@ -1,13 +1,17 @@
 const expect = require('chai').expect;
-const shazam = require('../src/shazam/search');
+const music = require('../src/music');
 
-const key = 'some5akeKey';
-const term = 'term';
+const event = {
+    body: {
+        search: 'll'
+    }
+}
+
 
 describe('shazam.js tests', () => {
-    describe('shazam.search() Test', () => {
+    describe('handler Test', () => {
         it('should error with 403', async () => {
-            const result = await shazam.search(term, key);
+            const result = await music.handler(event, {});
             expect(result.response.status).to.equal(403);
         });
     });
