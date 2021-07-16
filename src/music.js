@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
   console.log(event);
   const { key } = process.env;
-  const params = querystring.parse(event.queryStringParameters.search);
+  const params = event.queryStringParameters.search;
 
   console.log(params);
  // const shazam = require('./shazam/search');
