@@ -3,7 +3,6 @@ exports.handler = async (event, context) => {
   const { key } = process.env;
   const term = event.queryStringParameters.search;
 
-  console.log('search tearm', term);
   const shazam = require('./shazam/search');
   const response = await shazam.search(term, key);
   console.log('returned data ', response.data);

@@ -14,10 +14,10 @@ const search = async (term, key)=> {
     
     
     const response = await axios.request(options).then((response) => {
-       console.log('axios response', response);
+       console.log('axios response', response.data);
        return response;
     }).catch(function (error) {
-        console.log('axios error', error);
+        console.log('axios error', error.data);
         return error;
     });
      return response;
