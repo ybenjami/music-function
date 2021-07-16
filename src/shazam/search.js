@@ -1,5 +1,7 @@
 const axios = require("axios");
 const search = async (term, key)=> {
+
+   console.log('term ', term);
     var options = {
       method: 'GET',
       url: 'https://shazam.p.rapidapi.com/search',
@@ -12,8 +14,10 @@ const search = async (term, key)=> {
     
     
     const response = await axios.request(options).then((response) => {
+       console.log('axios response', response);
        return response;
     }).catch(function (error) {
+        console.log('axios error', error);
         return error;
     });
      return response;
