@@ -1,19 +1,23 @@
-
+const axios = require("axios");
 
 exports.handler = async (event, context) => {
   const { key } = process.env;
   const querystring = require("querystring");
   
-  const axios = require("axios");
+  
   const params = querystring.parse(event.body);
-  const searchString = params.search;
 
-  let data = 'err';
+  const data = await search(params.search, key);
+  return data;
 
+ 
+};
+
+const search = async (term, key)=> {
   var options = {
     method: 'GET',
     url: 'https://shazam.p.rapidapi.com/search',
-    params: {term: searchString, locale: 'en-US', offset: '0', limit: '5'},
+    params: {term, locale: 'en-US', offset: '0', limit: '5'},
     headers: {
       'x-rapidapi-key': `${key}`,
       'x-rapidapi-host': 'shazam.p.rapidapi.com'
@@ -21,17 +25,11 @@ exports.handler = async (event, context) => {
   };
   
   axios.request(options).then(function (response) {
-     data = response.data;
+     return response.data;
   }).catch(function (error) {
-      data = error;
+      return error;
   });
-
-  return {
-    statusCode: 200,
-    body: `${data}`,
-  };
-};
-
+}
 
 
 
