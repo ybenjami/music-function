@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
   console.log('search tearm', term);
   const shazam = require('./shazam/search');
   const response = await shazam.search(term, key);
-  console.log('returned data ', data);
+  console.log('returned data ', response.data);
   return {
     statusCode: 200,
     body: JSON.parse(response.data)
