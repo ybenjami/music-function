@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
     url: 'https://shazam.p.rapidapi.com/search',
     params: {term: searchString, locale: 'en-US', offset: '0', limit: '5'},
     headers: {
-      'x-rapidapi-key': key,
+      'x-rapidapi-key': `${key}`,
       'x-rapidapi-host': 'shazam.p.rapidapi.com'
     }
   };
@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    body: data,
+    body: `${data}`,
   };
 };
 
