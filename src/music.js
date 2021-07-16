@@ -10,6 +10,6 @@ exports.handler = async (event, context) => {
  // console.log('returned data ', data);
   return {
     statusCode: 200,
-    body: params
+    body: stringify(params)
   };
 };
