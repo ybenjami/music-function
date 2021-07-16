@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
   const params = querystring.parse(event.body);
   const searchString = params.search;
 
-  let data = '';
+  let data = 'err';
 
   var options = {
     method: 'GET',
@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    data,
+    body: data,
   };
 };
 
