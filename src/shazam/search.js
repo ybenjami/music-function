@@ -1,26 +1,25 @@
 const axios = require("axios");
-const search = async (term, key)=> {
+const search = async (q, key)=> {
 
-   console.log('term ', term);
     var options = {
       method: 'GET',
-      url: 'https://shazam.p.rapidapi.com/search',
-      params: {term, locale: 'en-US', offset: '0', limit: '5'},
+      url: 'https://genius.p.rapidapi.com/search',
+      params: {q},
       headers: {
         'x-rapidapi-key': `${key}`,
-        'x-rapidapi-host': 'shazam.p.rapidapi.com'
+        'x-rapidapi-host': 'genius.p.rapidapi.com'
       }
     };
-    
-    
-    const response = await axios.request(options).then((response) => {
-       console.log('axios response', response.data);
-       return response;
-    }).catch(function (error) {
-        console.log('axios error', error.response.data);
-        return error.response;
-    });
-     return response;
+     
+    return new Promise((resolve, reject)=>{
+      axios.request(options).then((response) => {
+        console.log('axios response', response.data);
+        resolve({status: 200, body: response.data})
+     }).catch(function (error) {
+         console.log('axios error', error.response.data);
+         resolve({status: 500, body: error.response.data})
+     });
+    })
   }
   
   module.exports = {search};

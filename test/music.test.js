@@ -2,17 +2,17 @@ const expect = require('chai').expect;
 const music = require('../src/music');
 
 const event = {
-    body: {
+    queryStringParameters: {
         search: 'll'
     }
 }
 
 
-describe('shazam.js tests', () => {
+describe('music.js tests', () => {
     describe('handler Test', () => {
-        it('should error with 403', async () => {
+        it('should error with not subscribed', async () => {
             const result = await music.handler(event, {});
-            expect(result.response.status).to.equal(403);
+            expect(result.body.message).to.equal('You are not subscribed to this API.');
         });
     });
 });
