@@ -17,8 +17,8 @@ const search = async (term, key)=> {
        console.log('axios response', response.data);
        return response;
     }).catch(function (error) {
-        console.log('axios error', error.data);
-        return error;
+        console.log('axios error', error.response.data);
+        return error.response;
     });
      return response;
   }
