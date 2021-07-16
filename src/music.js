@@ -3,8 +3,6 @@ const axios = require("axios");
 exports.handler = async (event, context) => {
   const { key } = process.env;
   const querystring = require("querystring");
-  
-  
   const params = querystring.parse(event.body);
 
   const data = await search(params.search, key);
@@ -24,12 +22,13 @@ const search = async (term, key)=> {
     }
   };
   
-  axios.request(options).then(function (response) {
+  
+  const response = await axios.request(options).then((response) => {
      return response.data;
   }).catch(function (error) {
       return error;
   });
+   return response;
 }
 
-
-
+module.exports = {search};
