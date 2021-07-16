@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const shazam = require('../src/shazam/search');
+const shazam = require('../src/endpoint/search');
 
 const key = 'some5akeKey';
 const term = 'term';
