@@ -12,7 +12,7 @@ const search = async (term, key)=> {
     
     
     const response = await axios.request(options).then((response) => {
-       return response.data;
+       return response;
     }).catch(function (error) {
         return error;
     });
