@@ -9,6 +9,7 @@ exports.handler = async (event, context) => {
   //const data = await shazam.search(params.search, key);
  // console.log('returned data ', data);
   return {
-    statusCode: 200
+    statusCode: 200,
+    body: params
   };
 };
