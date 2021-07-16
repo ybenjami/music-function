@@ -1,8 +1,7 @@
 exports.handler = async (event, context) => {
   console.log(event);
   const { key } = process.env;
-  const querystring = require("querystring");
-  const params = querystring.parse(event.queryStringParameters);
+  const params = querystring.parse(event.queryStringParameters.search);
 
   console.log(params);
  // const shazam = require('./shazam/search');
@@ -10,6 +9,6 @@ exports.handler = async (event, context) => {
  // console.log('returned data ', data);
   return {
     statusCode: 200,
-    body: JSON.stringify(params.search)
+    body: JSON.stringify(params)
   };
 };
