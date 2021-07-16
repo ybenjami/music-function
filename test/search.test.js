@@ -1,6 +1,6 @@
 const assert = require('assert');
 const expect = require('chai').expect;
-const music = require('../src/music');
+const music = require('../src/shazam/search');
 
 const key = 'some5akeKey';
 const term = 'term';
