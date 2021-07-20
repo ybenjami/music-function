@@ -14,10 +14,10 @@ const search = async (q, key)=> {
     return new Promise((resolve, reject)=>{
       axios.request(options).then((response) => {
         console.log('axios response', response.data);
-        resolve({status: 200, body: JSON.stringify(response.data)})
+        resolve({statusCode: 200, body: JSON.stringify(response.data)})
      }).catch(function (error) {
          console.log('axios error', error.response.data);
-         resolve({status: 500, body: error.response.data})
+         resolve({statusCode: 500, body: JSON.stringify(error.response.data)})
      });
     })
   }
