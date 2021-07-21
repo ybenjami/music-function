@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import Input from './components/input';
+import Empty from './components/empty';
 import DataItem from './components/data-item';
 import Grid from '@material-ui/core/Grid';
 import theme from './theme';
@@ -25,6 +26,7 @@ function App() {
          </header>
         </ThemeProvider>
         <br />
+        <Empty isEmpty={listItems.length} />
         <Grid container spacing={4}>
           {listItems.length > 0 &&
             [listItems]
