@@ -6,14 +6,11 @@ import axios from 'axios';
 
 export default function Input (props) {
     const [artist, setArtist] = React.useState("");
-    const [message, setMessage] = React.useState([]);
-    const localLink = 'http://localhost:9999/.netlify/functions/music';
     const prodLink = 'https://music-search-yb.netlify.app/.netlify/functions/music'
 
     const handleSubmit = async () => {
         props.parentCallback(Array(4).fill({"loading": true}));
         await search();
-        props.parentCallback(message);
       }
 
       const search = async() => {
@@ -25,7 +22,8 @@ export default function Input (props) {
             headers: {"Content-Type": "application/json"},
             params: {"search": artist}
           });
-          setMessage(resp.data.response.hits);
+
+          props.parentCallback(resp.data.response.hits);
          
         } catch (error) {
             console.log(error)

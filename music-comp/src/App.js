@@ -13,8 +13,8 @@ function App() {
     setData(childData); 
   } 
 
-  const listItems = data.map((item) =>
-    <DataItem result={item} />
+  const listItems = data.map((item, index) =>
+    <DataItem result={item} id={index} />
   );
 
   return (

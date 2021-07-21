@@ -26,9 +26,9 @@ export default function DataItem (props) {
    const loading = props.result.loading;
     const classes = useStyles();      
     return (
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid id={props.idx} item xs={12} sm={6} md={3} >
             <Card className={classes.card}>
-      <CardHeader
+        <CardHeader
         avatar={
           loading ? (
             <Skeleton animation="wave" variant="circle" width={40} height={40} />
