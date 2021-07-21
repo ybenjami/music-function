@@ -22,3 +22,6 @@ npm run start -- to run locally
 To Deploy 
 
 netlify deploy --prod
+
+<h2>:rocket: Live Demo </h2>
+https://music-search-yb.netlify.app/
