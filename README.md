@@ -25,3 +25,10 @@ netlify deploy --prod
 
 <h2>:rocket: Live Demo </h2>
 https://music-search-yb.netlify.app/
+
+<h2>:microscope: Cypress Test</h2>
+```bash
+#Run Cypress Component Testing (React)
+npx cypress open-ct 
+```
+ 
