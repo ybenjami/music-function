@@ -33,8 +33,8 @@ export default function Input (props) {
     return (
         <div>
             <form>
-                <label>Artist: </label>
-                <TextField id="search" className='breath' value={artist} onChange={e => setArtist(e.target.value)} required />
+                <label>Artist or Song: </label>
+                <TextField id="search" name='search' className='breath' value={artist} onChange={e => setArtist(e.target.value)} required />
                 <Button variant="contained" color="secondary" onClick={handleSubmit}>Search</Button>
                 </form>
         </div>
