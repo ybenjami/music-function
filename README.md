@@ -11,6 +11,12 @@ Install NodeJs 14.x or higher
 ```bash
 #Install netlify cli
 npm install netlify-cli -g
+
+#Build function
+netlify functions:build
+
+#Run function locally  using Netlify cli
+netlify functions:serve
 ```
 ```bash
 #Run locally 
