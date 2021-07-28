@@ -12,10 +12,9 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-
-const injectDevServer = require("@cypress/react/plugins/react-scripts")
+const injectDevServer = require('@cypress/react/plugins/react-scripts');
 
 module.exports = (on, config) => {
-  injectDevServer(on, config)
-  return config
-}
+  injectDevServer(on, config);
+  return config;
+};

@@ -1,10 +1,7 @@
 // @flow
 import { createTheme } from '@material-ui/core';
 
-import type
-{
-  Theme,
-} from '@material-ui/core';
+import type { Theme } from '@material-ui/core';
 
 const theme: Theme = createTheme({
   palette: {
@@ -25,6 +22,5 @@ const theme: Theme = createTheme({
     },
   },
 });
-
 
 export default theme;

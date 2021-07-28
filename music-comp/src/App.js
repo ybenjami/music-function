@@ -10,28 +10,24 @@ import theme from './theme';
 function App() {
   const [data, setData] = React.useState([]);
 
-  const handleCallback = (childData) =>{
-    setData(childData); 
-  } 
+  const handleCallback = (childData) => {
+    setData(childData);
+  };
 
-  const listItems = data.map((item, index) =>
-    <DataItem result={item} id={index} />
-  );
+  const listItems = data.map((item, index) => <DataItem result={item} id={index} />);
 
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-         <header className="App-header">
-           <Input parentCallback = {handleCallback} />
-         </header>
-        </ThemeProvider>
-        <br />
-        <Empty isEmpty={listItems.length} />
-        <Grid container spacing={4}>
-          {listItems.length > 0 &&
-            [listItems]
-          }
-        </Grid>
+        <header className="App-header">
+          <Input parentCallback={handleCallback} />
+        </header>
+      </ThemeProvider>
+      <br />
+      <Empty isEmpty={listItems.length} />
+      <Grid container spacing={4}>
+        {listItems.length > 0 && [listItems]}
+      </Grid>
     </div>
   );
 }

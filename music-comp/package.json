@@ -11,6 +11,8 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "cypress-react-selector": "^2.3.11",
+    "eslint": "^7.31.0",
+    "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -21,13 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "cypress:open": "cypress open",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -44,6 +41,14 @@
   "devDependencies": {
     "@cypress/react": "^5.9.2",
     "@cypress/webpack-dev-server": "^1.4.0",
-    "cypress": "^8.0.0"
+    "babel-eslint": "^10.1.0",
+    "cypress": "^8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "@emotion/eslint-plugin": "^11.2.0",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2"
   }
 }

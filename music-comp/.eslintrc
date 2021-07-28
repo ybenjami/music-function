@@ -1,0 +1,29 @@
+{
+    "extends": ["prettier"],
+    "plugins": ["prettier","jest", "@emotion"],
+    "rules": {
+      "@emotion/jsx-import": "error",
+      "prettier/prettier": ["error"],
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-filename-extension": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "react/prop-types": "off",
+      "no-param-reassign": ["error", { "props": false }],
+      "consistent-return": "off",
+      "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"]
+        }
+      }
+    },
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "parser": "babel-eslint"
+  }
+  
